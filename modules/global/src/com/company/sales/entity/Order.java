@@ -11,8 +11,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import java.util.List;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @NamePattern("%s|customer")
 @Table(name = "SALES_ORDER")
@@ -31,6 +36,33 @@ public class Order extends StandardEntity {
 
     @Column(name = "AMOUNT")
     protected BigDecimal amount;
+
+    @JoinTable(name = "SALES_ORDER_ITEM_LINK",
+        joinColumns = @JoinColumn(name = "ORDER_ID"),
+        inverseJoinColumns = @JoinColumn(name = "ITEM_ID"))
+    @ManyToMany
+    protected List<Item> items;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "SHOP_ID")
+    protected Shop shop;
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
@@ -55,6 +87,5 @@ public class Order extends StandardEntity {
     public BigDecimal getAmount() {
         return amount;
     }
-
 
 }

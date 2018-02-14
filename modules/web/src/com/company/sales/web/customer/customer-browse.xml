@@ -44,6 +44,9 @@
                         action="customersTable.edit"/>
                 <button id="removeBtn"
                         action="customersTable.remove"/>
+                <button id="countBtn"
+                        caption="msg://btnCount"
+                        invoke="btnCountClick"/>
             </buttonsPanel>
         </groupTable>
     </layout>

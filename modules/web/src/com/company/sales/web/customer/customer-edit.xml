@@ -11,7 +11,7 @@
                     view="_local"/>
         <collectionDatasource id="ordersDs"
                               class="com.company.sales.entity.Order"
-                              view="_local">
+                              view="order-view">
             <query>
                 <![CDATA[select e from sales$Order e where e.customer.id = :ds$customerDs order by e.date]]>
             </query>
@@ -34,6 +34,7 @@
             <columns>
                 <column id="date"/>
                 <column id="amount"/>
+                <column id="shop"/>
             </columns>
             <rows datasource="ordersDs"/>
         </table>

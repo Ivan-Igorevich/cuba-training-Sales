@@ -8,7 +8,10 @@
     <dsContext>
         <datasource id="orderDs"
                     class="com.company.sales.entity.Order"
-                    view="order-view"/>
+                    view="order-view">
+            <collectionDatasource id="itemsDs"
+                                  property="items"/>
+        </datasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -19,9 +22,36 @@
             <column width="250px">
                 <field property="customer"/>
                 <field property="date"/>
-                <field property="amount"/>
+                <field editable="false"
+                       property="amount"/>
+                <field property="shop"/>
             </column>
         </fieldGroup>
+        <textField id="tfShopAddress"
+                   datasource="orderDs"
+                   property="shop.fullAddress"
+                   width="320px"/>
+        <button id="btnAdd"
+                caption="msg://btnAdd"
+                invoke="onBtnAddClick"/>
+        <groupBox id="itemsBox"
+                  caption="msg://com.company.sales.entity/Order.items">
+            <table id="itemsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="cost"/>
+                </columns>
+                <rows datasource="itemsDs"/>
+                <buttonsPanel>
+                    <button action="itemsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

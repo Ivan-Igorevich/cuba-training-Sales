@@ -2,5 +2,30 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
     <view class="com.company.sales.entity.Order"
           extends="_base"
-          name="order-view"/>
+          name="order-view">
+        <property name="items"
+                  view="_local"/>
+        <property name="shop"
+                  view="_minimal">
+            <property name="address"
+                      view="_minimal">
+                <property name="country"/>
+                <property name="town"/>
+            </property>
+            <property name="fullAddress"/>
+        </property>
+    </view>
+    <view class="com.company.sales.entity.Shop"
+          extends="_local"
+          name="shop-view">
+        <property name="items"
+                  view="_minimal">
+            <property name="cost"/>
+        </property>
+        <property name="address"
+                  view="_minimal">
+            <property name="country"/>
+            <property name="town"/>
+        </property>
+    </view>
 </views>

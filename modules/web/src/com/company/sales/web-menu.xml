@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="refBook"
+          insertBefore="administration">
+        <menu id="menuItems">
+            <item id="browseItems"
+                  screen="sales$Item.browse"/>
+            <item id="addItem"
+                  screen="sales$Item.edit"/>
+        </menu>
+        <menu id="menuShops">
+            <item id="shops"
+                  screen="sales$Shop.browse"/>
+            <item id="addShop"
+                  screen="sales$Shop.edit"/>
+        </menu>
+    </menu>
     <menu id="application-sales"
           insertBefore="administration">
-        <item screen="sales$Order.browse"/>
-        <item screen="sales$Customer.browse"/>
+        <item id="orders"
+              screen="sales$Order.browse"/>
+        <item id="customers"
+              screen="sales$Customer.browse"/>
     </menu>
 </menu-config>

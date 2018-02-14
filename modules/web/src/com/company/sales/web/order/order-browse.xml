@@ -27,6 +27,7 @@
                     width="100%">
             <actions>
                 <action id="create"/>
+                <action id="excel"/>
                 <action id="edit"/>
                 <action id="remove"/>
             </actions>
@@ -34,6 +35,7 @@
                 <column id="customer"/>
                 <column id="date"/>
                 <column id="amount"/>
+                <column id="shop"/>
             </columns>
             <rows datasource="ordersDs"/>
             <rowsCount/>
@@ -45,6 +47,8 @@
                         action="ordersTable.edit"/>
                 <button id="removeBtn"
                         action="ordersTable.remove"/>
+                <button id="excelBtn"
+                        action="ordersTable.excel"/>
             </buttonsPanel>
         </groupTable>
     </layout>

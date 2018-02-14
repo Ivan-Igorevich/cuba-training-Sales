@@ -5,5 +5,8 @@
                       transaction-type="RESOURCE_LOCAL">
         <class>com.company.sales.entity.Customer</class>
         <class>com.company.sales.entity.Order</class>
+        <class>com.company.sales.entity.Address</class>
+        <class>com.company.sales.entity.Item</class>
+        <class>com.company.sales.entity.Shop</class>
     </persistence-unit>
 </persistence>
