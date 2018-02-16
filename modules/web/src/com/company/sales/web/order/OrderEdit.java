@@ -27,15 +27,15 @@ public class OrderEdit extends AbstractEditor<Order> {
     @Override
     public void init(Map<String, Object> params) {
         super.init(params);
-        orderDs.addItemPropertyChangeListener(new Datasource.ItemPropertyChangeListener<Order>() {
-            @Override
-            public void itemPropertyChanged(Datasource.ItemPropertyChangeEvent<Order> e) {
-                if (!"items".equals(e.getProperty())) return;
-                if (e.getItem().getItems() == null) return;
-//         если слушаем общий датасорс - в сервис передаём не заказ, а вложенный датасорс товаров
-                getItem().setAmount(amountService.countAmount(e.getItem()));
-            }
-        });
+//        orderDs.addItemPropertyChangeListener(new Datasource.ItemPropertyChangeListener<Order>() {
+//            @Override
+//            public void itemPropertyChanged(Datasource.ItemPropertyChangeEvent<Order> e) {
+//                if (!"items".equals(e.getProperty())) return;
+//                if (e.getItem().getItems() == null) return;
+////         если слушаем общий датасорс - в сервис передаём не заказ, а вложенный датасорс товаров
+//                getItem().setAmount(amountService.countAmount(e.getItem()));
+//            }
+//        });
         itemsDs.addCollectionChangeListener(new CollectionDatasource.CollectionChangeListener<Item, UUID>() {
             @Override
             public void collectionChanged(CollectionDatasource.CollectionChangeEvent<Item, UUID> e) {

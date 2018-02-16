@@ -4,7 +4,8 @@
         class="com.company.sales.web.customer.CustomerEdit"
         datasource="customerDs"
         focusComponent="fieldGroup"
-        messagesPack="com.company.sales.web.customer">
+        messagesPack="com.company.sales.web.customer"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
     <dsContext>
         <datasource id="customerDs"
                     class="com.company.sales.entity.Customer"
@@ -21,13 +22,20 @@
                 width="800"/>
     <layout expand="windowActions"
             spacing="true">
-        <fieldGroup id="fieldGroup"
-                    datasource="customerDs">
-            <column width="250px">
-                <field property="name"/>
-                <field property="email"/>
-            </column>
-        </fieldGroup>
+        <hbox spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="customerDs">
+                <column width="250px">
+                    <field property="name"/>
+                    <field property="email"/>
+                    <field property="locationLat"/>
+                    <field property="locationLng"/>
+                </column>
+            </fieldGroup>
+            <chart:mapViewer id="locationMap"
+                             height="300px"
+                             width="300px"/>
+        </hbox>
         <label value="msg://orders"/>
         <table height="200px"
                width="100%">

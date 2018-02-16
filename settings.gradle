@@ -1,5 +1,5 @@
 rootProject.name = 'Sales'
-def modulePrefix = 'app'
+def modulePrefix = 'sales'
 include(":${modulePrefix}-global", ":${modulePrefix}-core", ":${modulePrefix}-gui", ":${modulePrefix}-web")
 project(":${modulePrefix}-global").projectDir = new File(settingsDir, 'modules/global')
 project(":${modulePrefix}-core").projectDir = new File(settingsDir, 'modules/core')

@@ -33,6 +33,8 @@
             <columns>
                 <column id="name"/>
                 <column id="email"/>
+                <column id="locationLat"/>
+                <column id="locationLng"/>
             </columns>
             <rows datasource="customersDs"/>
             <rowsCount/>

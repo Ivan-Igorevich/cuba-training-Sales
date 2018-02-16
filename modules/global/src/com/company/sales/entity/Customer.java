@@ -20,6 +20,29 @@ public class Customer extends StandardEntity {
     @Column(name = "EMAIL", length = 50)
     protected String email;
 
+    @Column(name = "LOCATION_LAT")
+    protected Double locationLat;
+
+    @Column(name = "LOCATION_LNG")
+    protected Double locationLng;
+
+    public void setLocationLat(Double locationLat) {
+        this.locationLat = locationLat;
+    }
+
+    public Double getLocationLat() {
+        return locationLat;
+    }
+
+    public void setLocationLng(Double locationLng) {
+        this.locationLng = locationLng;
+    }
+
+    public Double getLocationLng() {
+        return locationLng;
+    }
+
+
     public void setName(String name) {
         this.name = name;
     }

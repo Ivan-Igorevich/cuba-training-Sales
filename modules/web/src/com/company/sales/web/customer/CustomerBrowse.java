@@ -1,10 +1,8 @@
 package com.company.sales.web.customer;
 
 import com.company.sales.entity.Customer;
-import com.company.sales.entity.Order;
 import com.haulmont.cuba.core.entity.KeyValueEntity;
 import com.haulmont.cuba.core.global.DataManager;
-import com.haulmont.cuba.core.global.LoadContext;
 import com.haulmont.cuba.core.global.ValueLoadContext;
 import com.haulmont.cuba.gui.components.AbstractLookup;
 import com.haulmont.cuba.gui.components.GroupTable;

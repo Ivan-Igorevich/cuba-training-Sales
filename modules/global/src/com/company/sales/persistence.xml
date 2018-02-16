@@ -8,5 +8,6 @@
         <class>com.company.sales.entity.Address</class>
         <class>com.company.sales.entity.Item</class>
         <class>com.company.sales.entity.Shop</class>
+        <class>com.company.sales.entity.ExtUser</class>
     </persistence-unit>
 </persistence>
